@@ -317,6 +317,33 @@ Detail tabel setiap modul disimpan pada file modul masing-masing.
 # Documentation Standards
 ```
 
+## Development Workflow
+
+Setiap pengembangan feature atau modul dimulai dan dikerjakan dengan urutan berikut:
+
+```text
+Database
+  |
+Backend
+  |
+Endpoint List
+  |
+Sample JSON Responses
+  |
+UI Components / UI Templates
+  |
+Frontend
+```
+
+1. **Database**: definisikan schema, migration, relationship, index, constraint, dan seed data yang diperlukan.
+2. **Backend**: implementasikan model, service, policy, validation, business logic, dan test berdasarkan kontrak database tersebut.
+3. **Endpoint List**: buat daftar endpoint yang dibutuhkan, mencakup method, path, tujuan, authorization, request payload, query parameter, dan status response.
+4. **Sample JSON Responses**: dokumentasikan contoh JSON untuk response sukses, empty state, validation error, authorization error, dan error sistem yang relevan.
+5. **UI Components / UI Templates**: buat atau perbarui komponen dan template UI reusable berdasarkan struktur data, state, validasi, serta kontrak response API yang telah ditetapkan.
+6. **Frontend**: integrasikan komponen ke halaman, navigation, state management, API client, serta error/loading/empty state untuk menyelesaikan user flow.
+
+Jangan memulai UI atau integrasi frontend sebelum daftar endpoint dan sample JSON response disetujui. Setiap tahap harus memperbarui dokumen modul terkait di `06-modules/` jika menghasilkan perubahan desain atau keputusan teknis.
+
 ## api.md
 
 Berisi standar API global.
@@ -327,6 +354,34 @@ Berisi standar API global.
 # Response Format
 
 # Error Format
+
+# Endpoint List
+
+## Method
+
+## Path
+
+## Purpose
+
+## Authorization
+
+## Request Payload
+
+## Query Parameters
+
+## Response Status
+
+# Sample JSON Responses
+
+## Success Response
+
+## Empty Response
+
+## Validation Error Response
+
+## Authorization Error Response
+
+## System Error Response
 
 # Pagination Standard
 
@@ -1028,6 +1083,11 @@ Tujuan modul.
 
 ## API Endpoints
 
+### Endpoint List
+
+| Method | Path | Purpose | Authorization | Request | Response Status |
+|--------|------|---------|---------------|---------|-----------------|
+
 ### GET
 
 ### POST
@@ -1035,6 +1095,18 @@ Tujuan modul.
 ### PUT
 
 ### DELETE
+
+### Sample JSON Responses
+
+#### Success
+
+#### Empty State
+
+#### Validation Error
+
+#### Authorization Error
+
+#### System Error
 
 ---
 
